@@ -63,7 +63,10 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
     if(f.pickup_location.value==="" || f.return_location.value===""){
         alert("Select locations"); return;
     }
-
+    if(f.message.value.trim() !== "" && f.message.value.trim().length < 10){
+    alert("Additional information must be at least 10 characters");
+    return;
+}
     /* ✅ SUCCESS */
     openPopup();
     f.reset();
