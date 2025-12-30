@@ -67,12 +67,10 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
     alert("Additional information must be at least 10 characters");
     return;
 }
-    /* ✅ SUCCESS */
     openPopup();
     f.reset();
 });
 
-/* 🔹 EXIT BUTTON */
 function goBack(){
     if(confirm("Are you sure you want to exit form?")){
         window.location.href="index.html";

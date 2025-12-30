@@ -15,103 +15,84 @@ function openBooking() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sliders_details = document.getElementById("sliders-details");
-  const sliderDots = document.getElementById("slider-dots");
+  const sliderBox = document.getElementById("sliders-details");
+  const dotsBox = document.getElementById("slider-dots");
 
   const sliders = [
-
     {
-      image: "images/pexels-navnidh-5458388.jpg",
-      first_heading: "Eternal Peace",
-      second_heading: "Golden Temple",
-      caption: "The Golden Temple in Amritsar is the holiest Sikh shrine, symbolizing equality, devotion, and spiritual harmony."
+      image:"images/pexels-navnidh-5458388.jpg",
+      first_heading:"Eternal Peace",
+      second_heading:"Golden Temple",
+      caption:"The Golden Temple in Amritsar is the holiest Sikh shrine, symbolizing equality, devotion, and spiritual harmony."
     },
     {
-      image: "images/pexels-rajesh-s-balouria-1289088-15017640.jpg",
-      first_heading: "Sacred Calm",
-      second_heading: "Badrinath Temple",
-      caption: "Badrinath Temple is one of the Char Dham shrines, located in the Himalayas of Uttarakhand, offering peace, devotion, and spiritual energy."
+      image:"images/pexels-rajesh-s-balouria-1289088-15017640.jpg",
+      first_heading:"Sacred Calm",
+      second_heading:"Badrinath Temple",
+      caption:"Badrinath Temple is one of the Char Dham shrines, offering peace and spiritual energy."
     },
     {
-      image: "images/image_search_1766660361421.jpg",
-      first_heading: "Nature’s Paradise",
-      second_heading: "Manali Hills",
-      caption: "Manali is a beautiful hill station famous for snow-capped mountains, adventure sports, scenic valleys, and serene natural beauty."
+      image:"images/image_search_1766660361421.jpg",
+      first_heading:"Nature’s Paradise",
+      second_heading:"Manali Hills",
+      caption:"Manali is famous for snow-capped mountains, adventure sports, and scenic beauty."
     },
     {
-      image: "images/pexels-abhisek-tripathy-467053315-32519928.jpg",
-      first_heading: "Divine Majesty",
-      second_heading: "Jagannath Temple",
-      caption: "Jagannath Temple in Puri, Odisha is a major pilgrimage site known for Rath Yatra and its deep cultural and spiritual significance."
-    },
-
-
+      image:"images/pexels-abhisek-tripathy-467053315-32519928.jpg",
+      first_heading:"Divine Majesty",
+      second_heading:"Jagannath Temple",
+      caption:"Jagannath Temple in Puri is a major pilgrimage site known for Rath Yatra."
+    }
   ];
 
-  // Create slides
-  sliders.forEach((slider, index) => {
-    const item = document.createElement("div");
-    item.className = "slider-items";
-    if (index === 0) item.classList.add("active");
-    item.innerHTML = `
-            <div class="slide">
-                <img src="${slider.image}" alt="${slider.first_heading}">
-                <div class="slide-text">
-                    <h2>${slider.first_heading}</h2>
-                    <h2>${slider.second_heading}</h2>
-                    <p>${slider.caption}</p>
-                </div>
-            </div>
-        `;
-    sliders_details.appendChild(item);
+  let current = 0;
 
-    // Create dot
+  sliders.forEach((s, i) => {
+    const slide = document.createElement("div");
+    slide.className = "slider-items";
+    if(i === 0) slide.classList.add("active");
+
+    slide.innerHTML = `
+      <div class="slide">
+        <img src="${s.image}">
+        <div class="slide-text">
+          <h2>${s.first_heading}</h2>
+          <h2>${s.second_heading}</h2>
+          <p>${s.caption}</p>
+        </div>
+      </div>`;
+    sliderBox.appendChild(slide);
+
     const dot = document.createElement("span");
-    dot.dataset.index = index;
-    if (index === 0) dot.classList.add("active");
-    sliderDots.appendChild(dot);
+    if(i === 0) dot.classList.add("active");
+    dotsBox.appendChild(dot);
 
-    dot.addEventListener("click", () => {
-      currentIndex = index;
-      showSlide(currentIndex);
-      resetInterval();
-    });
+    dot.onclick = () => changeSlide(i);
   });
 
-  let currentIndex = 0;
-  const totalSlides = sliders.length;
   const slides = document.querySelectorAll(".slider-items");
+  const dots = document.querySelectorAll(".dots span");
 
-  const showSlide = index => {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      if (i === index) slide.classList.add("active");
-    });
-
-    document.querySelectorAll(".dots span").forEach(dot => dot.classList.remove("active"));
-    document.querySelector(`.dots span[data-index='${index}']`).classList.add("active");
-  };
-
-  // Auto slide
-  let slideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    showSlide(currentIndex);
-  }, 4000);
-
-  function resetInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      showSlide(currentIndex);
-    }, 4000);
+  function changeSlide(i){
+    slides[current].classList.remove("active");
+    dots[current].classList.remove("active");
+    current = i;
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+    resetAuto();
   }
 
-  // Initial display
-  showSlide(currentIndex);
+  function nextSlide(){
+    changeSlide((current + 1) % slides.length);
+  }
+
+  let auto = setInterval(nextSlide, 4500);
+
+  function resetAuto(){
+    clearInterval(auto);
+    auto = setInterval(nextSlide, 4500);
+  }
 });
-
-
-
 
 // car and bus details .....
 
