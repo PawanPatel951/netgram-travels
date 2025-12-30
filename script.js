@@ -205,7 +205,7 @@ const services = [
   {
     title: "Outstation Trips",
     desc: "Comfortable long-distance journeys with well-maintained vehicles.",
-    image: "images/image_search_1766563133933.webp"
+    image: "images/outside.webp"
   },
   {
     title: "Bus & Tempo Rental",

@@ -1,3 +1,18 @@
+let popup = document.getElementById("popup");
+let overlay = document.getElementById("overlay");
+
+function openPopup(){
+    popup.classList.add("open-popup");
+    overlay.classList.add("show-overlay");
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup");
+    overlay.classList.remove("show-overlay");
+}
+
+
+/* 🔹 FETCH INDIA STATES */
 fetch("https://countriesnow.space/api/v0.1/countries/states")
 .then(res => res.json())
 .then(data => {
@@ -14,7 +29,7 @@ fetch("https://countriesnow.space/api/v0.1/countries/states")
     });
 });
 
-// 🔹 Validation + Success
+/* 🔹 FORM SUBMIT + VALIDATION + POPUP */
 document.getElementById("bookingForm").addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -49,11 +64,12 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
         alert("Select locations"); return;
     }
 
-    alert("✅ Booking Form Submitted Successfully!\nNetGram Travels will contact you soon.");
+    /* ✅ SUCCESS */
+    openPopup();
     f.reset();
 });
 
-// 🔹 Exit Button
+/* 🔹 EXIT BUTTON */
 function goBack(){
     if(confirm("Are you sure you want to exit form?")){
         window.location.href="index.html";

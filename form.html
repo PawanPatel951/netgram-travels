@@ -90,6 +90,87 @@ textarea{
 .exit-btn:hover{
     background:#000;
 }
+/* Overlay background */
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 99;
+}
+
+/* Popup Box */
+.popup{
+    width: 360px;
+    background: #fff;
+    border-radius: 14px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    text-align: center;
+    padding: 35px 25px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 100;
+    opacity: 0;
+}
+
+/* Active State */
+.open-popup{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.show-overlay{
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup img{
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.popup h2{
+    font-size: 26px;
+    margin: 15px 0 8px;
+    color: #28a745;
+}
+
+.popup p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.popup button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: #f36c2f;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.popup button:hover{
+    background:#e85f22;
+}
+
+/* Mobile */
+@media(max-width:480px){
+    .popup{
+        width: 90%;
+    }
+}
+
+
 @media(max-width:768px){
     .booking-form{
         grid-template-columns:1fr;
@@ -162,7 +243,7 @@ textarea{
     </div>
 
     <div class="submit-btn">
-        <button type="submit">Submit Booking</button>
+        <button type="submit" >Submit Booking</button>
     </div>
 
     <div class="submit-btn">
@@ -170,10 +251,21 @@ textarea{
     </div>
 
 </form>
+   
+
 </div>
 </section>
+<div class="overlay" id="overlay"></div>
 
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <img src="images/success1.png">
+    <h2>Thank You!</h2>
+    <p>Your details have been successfully submitted.</p>
+    <button type="button" onclick="closePopup()">OK</button>
+</div>
 <script src="forms.js"></script>
+<script src="success.js"></script>
 
 </body>
 </html>
