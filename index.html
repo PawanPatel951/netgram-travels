@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetGram Travels</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/titles-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="logo">
+                <img src="images/nevbar-logo.png" alt="NetGram Travels Logo">
+                <span>NetGram Travels</span>
+            </div>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#bus-section">Our Bus</a>
+                   
+                </li>
+
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#destination-section">Destination</a></li>
+
+                <li><a href="#contant">Contact</a></li>
+                <li>
+                    <a href="#" class="book-btn" onclick="openBooking()">Book a Car</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="slider-section">
+            <div class="sliders" id="sliders-details">
+                <!-- Slides dynamically JS se add honge -->
+            </div>
+            <div class="dots" id="slider-dots"></div>
+        </section>
+
+
+        <!-- about us -->
+        <section class="about-us" id="about-us">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <h2>Your Trusted Partner in Comfortable Travel</h2>
+                <p>
+                    NetGram Travels is dedicated to providing safe, comfortable, and reliable
+                    travel services through well-maintained cars and luxury buses.
+                </p>
+                <p>
+                    Whether it’s business travel, family trips, or leisure journeys,
+                    we ensure a smooth and stress-free experience every time.
+                </p>
+                <button class="about-btn">Learn More</button>
+            </div>
+
+            <div class="about-image">
+                <img src="images/about-us.png" alt="NetGram Travels">
+            </div>
+        </section>
+
+
+        <!-- OUR BUS & CAR -->
+        <section class="bus-section" id="bus-section">
+            <p class="bus-tagline">OUR BUS & CAR</p>
+
+            <h2 class="bus-title">
+                Safe, Comfortable & <span>Trusted Travel</span>
+            </h2>
+
+            <p class="bus-subtitle">
+                NetGram Travels provides well-maintained cars and buses for local, outstation,
+                corporate, and tour travel. Our vehicles ensure comfort, safety, and reliable
+                service for every journey, whether it’s a family trip or a large group tour.
+            </p>
+
+            <section class="bus-section" id="bus-section">
+                <div class="bus-grid" id="busGrid">
+                    <!-- Cards dynamically JSON se load honge -->
+                </div>
+            </section>
+        </section>
+
+
+
+        <!-- Services -->
+        <div class="slider-container" id="Services">
+
+            <section class="premium-slider">
+
+                <div class="slider-heading">
+                    <h1>NetGram Travels Services</h1>
+                    <p>Click any service or wait for auto rotation</p>
+                </div>
+
+                <div class="slider-wrapper">
+
+                    <!-- LEFT BIG IMAGE -->
+                    <div class="slider-left">
+                        <img id="mainImg" src="images/red-van-nature.jpg" alt="">
+                        <div class="slider-text">
+                            <h2 id="mainTitle">Local City Travel</h2>
+                            <p id="mainDesc">Affordable and safe city rides with professional drivers.</p>
+                            <a href='/form'>Book Now</a>
+                        </div>
+                        <div class="slider-progress">
+                            <span id="progressBar"></span>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SMALL BOXES -->
+                    <div class="slider-right">
+                        <div class="small-box active" data-index="0">
+                            <img src="images/s3.jpg" alt="">
+                            <p>Local Travel</p>
+                        </div>
+                        <div class="small-box" data-index="1">
+                            <img src="images/image_search_1766563133933.webp" alt="">
+                            <p>Outstation Trips</p>
+                        </div>
+                        <div class="small-box" data-index="2">
+                            <img src="images/bus5.jpg" alt="">
+                            <p>Bus & Tempo Rental</p>
+                        </div>
+                        <div class="small-box" data-index="3">
+                            <img src="images/image_search_1766563432635.webp" alt="">
+                            <p>Corporate Travel</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <section class="destination-section" id="destination-section">
+            <div class="destination-box">
+
+                <h1>Popular Destination</h1>
+                <p class="sub-text">Discover the Most Loved Destination Around the Globe</p>
+
+                <div class="boxs">
+
+                    <!-- Card 1 -->
+                    <div class="destination-card">
+                        <div class="img-box">
+                            <img src="images/card1.jpg" alt="Badrinath">
+                        </div>
+                        <div class="destination-card-content">
+                            <h3>Sacred Calm at Badrinath Temple.</h3>
+                            <p class="location">Badrinath, Uttarakhand, India</p>
+                            <span class="rating">⭐ 4.7</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="destination-card">
+                        <div class="img-box">
+                            <img src="images/card2.jpg" alt="Jagannath">
+                        </div>
+                        <div class="destination-card-content">
+                            <h3>Divine Majesty at Jagannath Temple.</h3>
+                            <p class="location">Puri, Odisha, India</p>
+                            <span class="rating">⭐ 4.8</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="destination-card">
+                        <div class="img-box">
+                            <img src="images/card3.webp" alt="Neem Karoli">
+                        </div>
+                        <div class="destination-card-content">
+                            <h3>Spiritual Serenity at Neem Karoli Temple.</h3>
+                            <p class="location">Dehradun, India</p>
+                            <span class="rating">⭐ 4.5</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Gallery -->
+
+        <section class="gallery" id="gallery">
+    <h2 class="gallery-title">Our Gallery</h2>
+    <p class="gallery-subtitle">Dynamic Image Gallery</p>
+
+    <div class="gallery-container" id="galleryContainer"></div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+        <!-- Contact NetGram Travels -->
+        <section class="hero" id="contant">
+            <div>
+                <h1>Contact NetGram Travels</h1>
+                <p>Comfort • Safety • On-Time Journey</p>
+            </div>
+        </section>
+        <section class="contact-section">
+
+            <!-- INFO CARDS -->
+            <div class="info-cards">
+                <div class="card">
+                    <span>📍</span>
+                    <h3>Our Location</h3>
+                    <p>India</p>
+                </div>
+
+                <div class="card">
+                    <span>📞</span>
+                    <h3>Call Us</h3>
+                    <p>+91 9876543210</p>
+                </div>
+
+                <div class="card">
+                    <span>✉️</span>
+                    <h3>Email</h3>
+                    <p>info@netgramtravels.com</p>
+                </div>
+            </div>
+
+            <!-- FORM & MAP -->
+            <div class="form-map">
+
+                <div class="form-box">
+                    <h2>Send Us A Message</h2>
+                    <p id="showError"></p>
+                    <form id="form" onsubmit="return validateform()">
+                        <input type="text" id="username" placeholder="Your Name">
+                        <input type="email" id="useremail" placeholder="Your Email">
+                        <textarea rows="5" id="usermsg" placeholder="Your Message"></textarea>
+                        <button type="submit">Submit Message</button>
+                    </form>
+
+                </div>
+
+                <div class="map">
+                    <iframe src="https://www.google.com/maps?q=India&output=embed"></iframe>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <footer class="pro-footer">
+
+        <div class="footer-wrap">
+
+            <!-- LOGO -->
+            <div class="footer-col brand">
+                <div class="brand-logo">
+                    <img src="images/nevbar-logo.png" alt="image">
+                    <h2>NetGram Travels</h2>
+                </div>
+                <p>
+                    Premium travel solutions with safety, comfort and reliability.
+                    Experience smooth journeys with us.
+                </p>
+            </div>
+
+            <!-- LINKS -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#bus-section">Our Bus</a></li>
+                    <li><a href="#destination-section">Destination</a></li>
+                    <li><a href="#contant">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Local Travel</a></li>
+                    <li><a href="#">Outstation</a></li>
+                    <li><a href="#">Bus Rental</a></li>
+                    <li><a href="#">Corporate Travel</a></li>
+                </ul>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-copy">
+            © 2025 NetGram Travels • All Rights Reserved
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NetGram Travels | Booking Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background-image: url("images/red-van-nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.booking-section{
+    width:100%;
+    padding:60px 15px;
+}
+.booking-container{
+    max-width:900px;
+    background:#fff;
+    margin:auto;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.booking-container h2{
+    font-size:28px;
+    margin-bottom:30px;
+    text-align: center;
+    color: #ff9900;
+    font-weight: bold;
+}
+.booking-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+label{
+    font-size:14px;
+    margin-bottom:6px;
+}
+input, select, textarea{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:14px;
+}
+input:focus, select:focus, textarea:focus{
+    border-color:#f36c2f;
+    outline:none;
+}
+.full-width{
+    grid-column:1/-1;
+}
+textarea{
+    height:120px;
+    resize:none;
+}
+.submit-btn{
+    grid-column:1/-1;
+}
+.submit-btn button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#f36c2f;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+.submit-btn button:hover{
+    background:#e85f22;
+}
+.exit-btn{
+    background:#444;
+}
+.exit-btn:hover{
+    background:#000;
+}
+@media(max-width:768px){
+    .booking-form{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="booking-section">
+<div class="booking-container">
+<h2>NetGram Travels - Booking Form</h2>
+
+<form class="booking-form" id="bookingForm">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your Name">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Your Email">
+    </div>
+
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" name="phone" placeholder="10-digit Mobile Number">
+    </div>
+
+    <div class="form-group">
+        <label>Bus Type</label>
+        <select name="bus_type">
+            <option value="">Select Bus Type</option>
+            <option>Mini Bus</option>
+            <option>Luxury Bus</option>
+            <option>AC Bus</option>
+            <option>Non-AC Bus</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Pick Up Date</label>
+        <input type="date" name="pickup_date">
+    </div>
+
+    <div class="form-group">
+        <label>Return Date</label>
+        <input type="date" name="return_date">
+    </div>
+
+    <div class="form-group">
+        <label>Pick Up Location</label>
+        <select id="pickupState" name="pickup_location">
+            <option value="">Loading...</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Return Location</label>
+        <select id="returnState" name="return_location">
+            <option value="">Loading...</option>
+        </select>
+    </div>
+
+    <div class="form-group full-width">
+        <label>Additional Information</label>
+        <textarea name="message" placeholder="Optional"></textarea>
+    </div>
+
+    <div class="submit-btn">
+        <button type="submit">Submit Booking</button>
+    </div>
+
+    <div class="submit-btn">
+        <button type="button" class="exit-btn" onclick="goBack()">Go Back</button>
+    </div>
+
+</form>
+</div>
+</section>
+
+<script src="forms.js"></script>
+
+</body>
+</html>
